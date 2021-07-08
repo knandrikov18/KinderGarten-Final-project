@@ -3,53 +3,52 @@
 #include <string>
 #include <vector>
 using namespace std;
-void accessCheck()
+
+
+void showWelcome()
 {
-	while ()
-	{
-		if ()
-		{
-
-		}
-		else
-		{
-
-		}
-	}
-
+	cout << "WELCOME TO OUR PROGRAM!" << endl;
+	cout << "To try it, you'll have to enter whole number!" << endl << endl;
 }
-
-int Menu()
+void Menu()
 {
-	char selection;
-	cout << "\n Menu";
-	cout << "\n========";
-	cout << "\n 1. Create user";
-	cout << "\n 2. Edit user";
-	cout << "\n 3. Delete user";
-	cout << "\n 4. Exit";
-	cout << "\n Enter selection: ";
-
-	cin >> selection;
-	switch (selection)
+	int choice;
+	showWelcome();
+	do
 	{
+		cout << endl
+			<< "       MENU      \n" 
+			<< "==================\n"
+			<< " 1 - Create a user\n"
+			<< " 2 - Edit a user\n"
+			<< " 4 - Delete a user\n"
+			<< " 5 - Exit.\n"
+			<< " Enter your choice : ";
+		cin >> choice;
 
-	case 1: {cout << "\n To create a user\n"; }
+		switch (choice)
+		{
+		case 1:
+			system("CLS");
+			break;
+		case 2:
+			system("CLS");
+			break;
+		case 3:
+			system("CLS");
+			break;
+		case 4:
+			system("CLS");
+			break;
+		case 5:
+			cout << "End of Program.\n";
+			break;
+		default:
+			cout << "Not a Valid Choice. \n"
+				<< "Choose again.\n";
+			break;
+		}
 
-		  break;
+	} while (choice != 5);
 
-	case 2: {cout << "\n To edit a user"; }
-		  break;
-
-	case 3: {cout << "\n To delete"; }
-		  break;
-
-	case 4: {cout << "\n To exit the menu"; }
-
-		  break;
-	default: cout << "\n Invalid selection";
-
-	}
-	cout << "\n";
-	return 0;
 }
