@@ -1,7 +1,7 @@
-# KinderGarten-Final-project
+# 👶KinderGarten-Final-project👶
 
 ---
-### Table of Contents
+### ➡Table of Contents⬅
 - [Description](#description)
 - [Used technologies](#used-technologies)
 - [Our team](#our-team)
@@ -9,8 +9,8 @@
 
 ---
 
-## Description
-### Our team
+# 📄Description📄
+# 👥Our team👥
 <table>
   <thead>
     <tr>
@@ -33,7 +33,7 @@
 </table>
 
 
-### Used technologies
+# 💻Used technologies🖥
 
 - Visual studio 2019
 - GitHub
@@ -41,7 +41,7 @@
 - PowerPoint
 - Discord
 
-### Contact us
+# 📧Contact us📧
 - KNAndrikov18@codingburgas.bg
 - ZAIvnanov18@codingburgas.bg
 - TBDimov18@codingburgas.bg
