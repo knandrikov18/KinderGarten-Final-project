@@ -46,8 +46,8 @@ void InsertData(USER_DATA* user)
 
 int main()
 {
-
-
+  
 	Menu();
 
 }
+ 

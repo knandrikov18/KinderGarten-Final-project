@@ -14,11 +14,12 @@ void showWelcome()
 void Menu()
 { 
 	string lname, lpassword;
+
+
 	loginSystem(lname, lpassword);
 	system("CLS");
 	int choice;
 	showWelcome();
-	d
 	{
 		cout << endl
 			<< "       MENU      \n" 
@@ -33,6 +34,7 @@ void Menu()
 		switch (choice)
 		{
 		case 1:  
+			InsertData();
 			system("CLS");
 			break;
 		case 2:
