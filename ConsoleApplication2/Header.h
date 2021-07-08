@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Login.h"
 using namespace std;
 
 
@@ -11,10 +12,13 @@ void showWelcome()
 	cout << "To try it, you'll have to enter whole number!" << endl << endl;
 }
 void Menu()
-{
+{ 
+	string lname, lpassword;
+	loginSystem(lname, lpassword);
+	system("CLS");
 	int choice;
 	showWelcome();
-	do
+	d
 	{
 		cout << endl
 			<< "       MENU      \n" 
@@ -28,7 +32,7 @@ void Menu()
 
 		switch (choice)
 		{
-		case 1:
+		case 1:  
 			system("CLS");
 			break;
 		case 2:
