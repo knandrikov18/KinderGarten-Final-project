@@ -5,7 +5,6 @@
 - [Description](#description)
 - [Used technologies](#used-technologies)
 - [Our team](#our-team)
-- [Role](#role)
 - [Contact](#contact-us)
 
 ---
