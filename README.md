@@ -37,9 +37,10 @@
 ### Used technologies
 
 - Visual studio 2019
-- Discord
 - GitHub
 - Word
+- PowerPoint
+- Discord
 
 ### Contact us
 - KNAndrikov18@codingburgas.bg
