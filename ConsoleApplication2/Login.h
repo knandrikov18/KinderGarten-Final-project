@@ -4,11 +4,12 @@
 using namespace std;
 bool registerUser()
 {
+    return 0;
 }
 bool loginAdminSystem(string username, string userPassword)
 {
     int loginAttempt = 0;
-    while (loginAttempt < 5)
+    while (loginAttempt < 2)
     {
         cout << "Please enter your user name: ";
         cin >> username;
@@ -17,7 +18,7 @@ bool loginAdminSystem(string username, string userPassword)
 
       if (username == "Admin" && userPassword == "admin123")
         {
-          cout << "Welcome User!\n";
+          cout << "Welcome Admin!\n";
            break;
       }
       else
@@ -26,12 +27,13 @@ bool loginAdminSystem(string username, string userPassword)
             loginAttempt++;
         }
     }
-    if (loginAttempt == 5) {
+    if (loginAttempt == 2) {
         cout << "Too many login attempts! The program will now terminate.";
    }
-    return 0;
+    cout << endl;
     cout << "Thank you for logging in.\n";
     cout << endl;
+    return false;
 }
 
 //bool loginUserSystem(string username, string userPassword)

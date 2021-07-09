@@ -93,7 +93,7 @@ void showWelcome()
 	cout << "WELCOME TO OUR PROGRAM!" << endl;
 	cout << "To try it, you'll have to enter whole number!" << endl << endl;
 }
-void mainMenu()
+bool mainMenu()
 { 
 	string username, userPassword;
 
@@ -104,7 +104,7 @@ void mainMenu()
 		cout << endl
 			<< "       MENU      \n" 
 			<< "==================\n"
-			<< " 1 - Register admin \n"
+			<< " 1 - Register user \n"
 			<< " 2 - Login as admin\n"
 			<< " 3 - Login as user\n" 
 			<< " 4 - Exit\n"
@@ -119,6 +119,7 @@ void mainMenu()
 		case 2:
 			system("CLS");
 			loginAdminSystem(username, userPassword);
+			return false;
 			adminMenu();
 			break;
 		case 3:
