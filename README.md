@@ -1,4 +1,4 @@
-# 👶KinderGarten-Final-project👶
+# <p align="center">👶KinderGarten-Final-project👶</p>
 
 ---
 ### ➡Table of Contents⬅
@@ -9,7 +9,7 @@
 
 ---
 
-# 📄Description📄
+# <p align="center">📄Description📄</p>
 # 👥Our team👥
 <table>
   <thead>
@@ -33,7 +33,7 @@
 </table>
 
 
-# 💻Used technologies🖥
+# <p align="center">💻Used technologies🖥</p>
 
 - Visual studio 2019
 - GitHub
@@ -41,7 +41,7 @@
 - PowerPoint
 - Discord
 
-# 📧Contact us📧
+# <p align="center">📧Contact us📧</p>
 - KNAndrikov18@codingburgas.bg
 - ZAIvnanov18@codingburgas.bg
 - TBDimov18@codingburgas.bg
