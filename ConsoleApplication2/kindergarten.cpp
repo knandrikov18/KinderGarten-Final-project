@@ -17,12 +17,6 @@ struct USER_DATA
 };
 void InsertData(USER_DATA* user)
 {
-	cout << "Username: ";
-	cin >> user->userName;
-	cout << endl;
-	cout << "Password: ";
-	cin >> user->password;
-	cout << endl;
 	cout << "Enter id: ";
 	cin >> user->id;
 	cout << endl;
@@ -41,13 +35,18 @@ void InsertData(USER_DATA* user)
 	cout << "Enter child age: ";
 	cin >> user->yearOfChild;
 	cout << endl;
-
 }
 
+void checkAgeOfChild(int yearOfChild)
+{
+	while (yearOfChild < 1 || yearOfChild > 5) {
+		cout << "Invalid age, re-enter: ";
+		cin >> yearOfChild;
+	}
+}
 int main()
 {
-  
-	Menu();
-
+	//system("Color XY");//
+	mainMenu();
 }
  
