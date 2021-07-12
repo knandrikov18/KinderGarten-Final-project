@@ -7,7 +7,8 @@ using namespace std;
 void mainMenu()
 {
 	string username, userPassword;
-
+	string name;
+	string regPassword;
 	system("CLS");
 	int choice;
 	showWelcome();
@@ -26,6 +27,8 @@ void mainMenu()
 	{
 	case 1:
 		system("CLS");
+		registerUser(name, regPassword);
+		userMenu();
 		break;
 	case 2:
 		system("CLS");

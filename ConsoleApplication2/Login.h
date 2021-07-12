@@ -2,9 +2,13 @@
 #include <string>
 #include <iostream>
 using namespace std;
-bool registerUser()
+void registerUser(string name, string regPassword)
 {
-    return 0;
+
+    cout << "Enter user name: ";
+    cin >> name;
+    cout << "Enter user password: ";
+    cin >> regPassword;
 }
 void loginAdminSystem(string username, string userPassword)
 {
