@@ -6,7 +6,7 @@ bool registerUser()
 {
     return 0;
 }
-bool loginAdminSystem(string username, string userPassword)
+void loginAdminSystem(string username, string userPassword)
 {
     int loginAttempt = 0;
     while (loginAttempt < 2)
@@ -32,35 +32,33 @@ bool loginAdminSystem(string username, string userPassword)
    }
     cout << endl;
     cout << "Thank you for logging in.\n";
-    cout << endl;
-    return false;
+
 }
 
-//bool loginUserSystem(string username, string userPassword)
-//{
-//    int loginAttempt = 0;
-//    while (loginAttempt < 5)
-//    {
-//        cout << "Please enter your user name: ";
-//        cin >> username;
-//        cout << "Please enter your user password: ";
-//        cin >> userPassword;
-//
-//        if (username == "User" && userPassword == "user123")
-//        {
-//            cout << "Welcome User!\n";
-//            break;
-//        }
-//        else
-//        {
-//            cout << "Invalid login attempt. Please try again.\n" << '\n';
-//            loginAttempt++;
-//        }
-//    }
-//    if (loginAttempt == 5) {
-//        cout << "Too many login attempts! The program will now terminate.";
-//    }
-//    return 0;
-//    cout << "Thank you for logging in.\n";
-//    cout << endl;
-//}
+void loginUserSystem(string username, string userPassword)
+{
+    int loginAttempt = 0;
+    while (loginAttempt < 2)
+    {
+        cout << "Please enter your user name: ";
+        cin >> username;
+        cout << "Please enter your user password: ";
+        cin >> userPassword;
+
+        if (username == "User" && userPassword == "user123")
+        {
+            cout << "Welcome User!\n";
+            break;
+        }
+        else
+        {
+            cout << "Invalid login attempt. Please try again.\n" << '\n';
+            loginAttempt++;
+        }
+    }
+    if (loginAttempt == 2) {
+        cout << "Too many login attempts! The program will now terminate.";
+    }
+    cout << "Thank you for logging in.\n";
+    cout << endl;
+}
