@@ -72,6 +72,7 @@ void showUser(USER_DATA* user, int& userCount, int& maxId)
 		cout << "User id: " << user[i].id << endl;
 		cout << "User child's name: " << user[i].childName << endl;
 		cout << "Year of child: " << user[i].yearOfChild << endl;
+		cout << endl;
 	}
 }
 
@@ -79,22 +80,22 @@ void inputUserData(USER_DATA* user, int& userCount, int& maxId) {
 	USER_DATA uSer;
 
 	cout << "Enter id: ";
-	cin >> user->id;
+	cin >> uSer.id;
 	cout << endl;
 	cout << "Enter first name: ";
-	cin >> user->firstName;
+	cin >> uSer.firstName;
 	cout << endl;
 	cout << "Enter last name: ";
-	cin >> user->lastName;
+	cin >> uSer.lastName;
 	cout << endl;
 	cout << "Enter address: ";
-	cin >> user->address;
+	cin >> uSer.address;
 	cout << endl;
 	cout << "Enter child name: ";
-	cin >> user->childName;
+	cin >> uSer.childName;
 	cout << endl;
 	cout << "Enter child age: ";
-	cin >> user->yearOfChild;
+	cin >> uSer.yearOfChild;
 	createUser(user, userCount, uSer, maxId);
 }
 void editUser(USER_DATA* user, int& userCount) {
@@ -117,31 +118,31 @@ void editUser(USER_DATA* user, int& userCount) {
 	switch (edit) {
 	case 1: {
 		cout << "First name: ";
-		cin >> user->firstName;
+		cin >> users.firstName;
 		updateUser(user, userCount, users, userId);
 		break;
 	}
 	case 2: {
 		cout << "Last name: ";
-		cin >> user->lastName;
+		cin >> users.lastName;
 		updateUser(user, userCount, users, userId);
 		break;
 	}
 	case 3: {
 		cout << "Address: ";
-		cin >> user->address;
+		cin >> users.address;
 		updateUser(user, userCount, users, userId);
 		break;
 	}
 	case 4: {
 		cout << "Child name: ";
-		cin >> user->childName;
+		cin >> users.childName;
 		updateUser(user, userCount, users, userId);
 		break;
 	}
 	case 5: {
 		cout << "Year of child: ";
-		cin >> user->yearOfChild;
+		cin >> users.yearOfChild;
 		updateUser(user, userCount, users, userId);
 		break;
 	}
@@ -270,7 +271,7 @@ void userMenu(USER_DATA* user, int& userCount, int& maxId, USER_DATA newOrder)
 		<< "       MENU      \n"
 		<< "==================\n"
 		<< " 1 - View created list of children \n"
-		<< " 2 - Create a user"
+		<< " 2 - Create a user\n"
 		<< " 3 - Exit\n"
 		<< " Enter your choice : ";
 	cin >> choice;
