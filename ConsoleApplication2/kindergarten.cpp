@@ -247,7 +247,7 @@ void adminMenu(USER_DATA* user, int& userCount, USER_DATA newOrder, int& maxId, 
 		break;
 	case 4:
 		system("CLS");
-		deleteUser(user, userCount, id);
+		deleteUserId(user, userCount, id);
 		adminMenu(user, userCount, newOrder, maxId, id);
 		break;
 	case 5:
