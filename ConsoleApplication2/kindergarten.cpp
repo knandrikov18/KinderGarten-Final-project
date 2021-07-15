@@ -25,8 +25,6 @@ bool isAdmin(string UserName, string pass)
 void createUser(USER_DATA* user, int& userCount, USER_DATA newOrder, int& maxId) {
 	newOrder.id = maxId;
 	user[userCount] = newOrder;
-	userCount++;
-	maxId++;
 }
 
 int getUserById(USER_DATA* user, int& userCount, int id)
@@ -67,18 +65,30 @@ USER_DATA getOrder(USER_DATA* user, int& userCount, int id)
 	}
 	return user[index];
 }
+bool checkIsIdValid(USER_DATA* user, int& userCount, int Id)
+{
+	int index = getUserById(user, userCount, Id);
+	if (index == -1)
+	{
+		cout << "Enter valid ID: ";
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
 
-
-void showUser(USER_DATA* user, int& userCount, int& maxId)
+void showUserMenu(USER_DATA* user, int& userCount, int& maxId)
 {
 	cout << "\n List of users: " << endl;
 	for (int i = 0; i < userCount; i++)
 	{
-		cout << "User First name: " << user[i].firstName << endl;
-		cout << "User Last name: " << user[i].lastName << endl;
-		cout << "User address: " << user[i].address << endl;
-		cout << "User id: " << user[i].id << endl;
-		cout << "User child's name: " << user[i].childName << endl;
+		cout << "User's First name: " << user[i].firstName << endl;
+		cout << "User's Last name: " << user[i].lastName << endl;
+		cout << "User's address: " << user[i].address << endl;
+		cout << "User's id: " << user[i].id << endl;
+		cout << "User's child's name: " << user[i].childName << endl;
 		cout << "Year of child: " << user[i].yearOfChild << endl;
 		cout << endl;
 	}
