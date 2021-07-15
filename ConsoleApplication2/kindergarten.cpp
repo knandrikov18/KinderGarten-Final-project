@@ -240,92 +240,7 @@ void deleteUserId(USER_DATA* user, int& userCount, int& maxId) {
 
 	deleteUser(user, userCount, userId);
 }
-void adminMenu(USER_DATA* user, int& userCount, USER_DATA newOrder, int& maxId, int id)
-{
-	int choice;
-	cout << endl
-		<< "       MENU      \n"
-		<< "==================\n"
-		<< " 1 - Create a user\n"
-		<< " 2 - Edit a user\n"
-		<< " 3 - See list of users\n"
-		<< " 4 - Delete a user by id\n"
-		<< " 5 - Exit\n"
-		<< " Enter your choice : ";
-	cin >> choice;
 
-	switch (choice)
-	{
-	case 1:
-		system("CLS");
-		userMenu(user, userCount, maxId);
-		adminMenu(user, userCount, newOrder, maxId, id);
-		break;
-	case 2:
-		system("CLS");
-		editUser(user, userCount);
-		adminMenu(user, userCount, newOrder, maxId, id);
-		break;
-	case 3:
-		system("CLS");
-		showUserMenu(user, userCount, maxId);
-		adminMenu(user, userCount, newOrder, maxId, id);
-		break;
-	case 4:
-		system("CLS");
-		deleteUserId(user, userCount, id);
-		adminMenu(user, userCount, newOrder, maxId, id);
-		break;
-	case 5:
-		cout << endl;
-		cout << "End of Program.\n";
-		break;
-	default:
-		cout << "Not a Valid Choice. \n"
-			<< "Choose again.\n";
-		break;
-	}
-
-
-}
-void userMenu(USER_DATA* user, int& userCount, int& maxId, USER_DATA newOrder)
-{
-	int choice;
-
-	cout << endl
-		<< "       MENU      \n"
-		<< "==================\n"
-		<< " 1 - View created list of children \n"
-		<< " 2 - Create a user\n"
-		<< " 3 - Exit\n"
-		<< " Enter your choice : ";
-	cin >> choice;
-
-	switch (choice)
-	{
-	case 1:
-		system("CLS");
-		showUser(user, userCount, maxId);
-		userMenu(user, userCount, maxId, newOrder);
-		break;
-	case 2:
-		system("CLS");
-		inputUserData(user, userCount, maxId);
-		userMenu(user, userCount, maxId, newOrder);
-		break;
-
-	case 3:
-		cout << endl;
-		cout << "End of Program.\n";
-		break;
-	default:
-		cout << "Not a Valid Choice. \n"
-			<< "Choose again.\n";
-		break;
-	}
-
-
-}
 bool showMainMenu(USER_DATA* user, int& userCount, int& maxId, USER_DATA newOrder, int id)
 {
 
@@ -335,8 +250,12 @@ bool showMainMenu(USER_DATA* user, int& userCount, int& maxId, USER_DATA newOrde
 	string usName;
 	string userPassword;
 	cout << "\n===MAIN MENU===" << endl;
-	cout << "1. Login as admin" << endl;
-	cout << "2. Login as user" << endl;
+	cout << "1. User Menu" << endl;
+	cout << "2. Show Users" << endl;
+	cout << "3. Edit User Order" << endl;
+	cout << "4. Delete User Order" << endl;
+	cout << "5. Get User By Parent Last Name" << endl;
+	cout << "6. Get User By Student Name" << endl;
 	cout << "9. Exit" << endl;
 	cout << "Your choice: ";
 
@@ -344,18 +263,31 @@ bool showMainMenu(USER_DATA* user, int& userCount, int& maxId, USER_DATA newOrde
 
 	switch (choice) {
 	case 1: {
-		system("CLS");
-		loginAdminSystem(adminName, adminPassword);
-		adminMenu(user, userCount, newOrder, maxId, id);
+		userMenu(user, userCount, maxId);
 		break;
 	}
 	case 2: {
-		system("CLS");
-		loginUserSystem(usName, userPassword);
-		userMenu(user, userCount, maxId, newOrder);
+		showUserMenu(user, userCount, maxId);
 		break;
 	}
-
+	case 3: {
+		editUser(user, userCount);
+		break;
+	}
+	case 4: {
+		deleteUserId(user, userCount, maxId);
+		break;
+	}
+	case 5:
+	{
+		getUserByLastName(user, userCount);
+		break;
+	}
+	case 6:
+	{
+		getUserByChildName(user, userCount);
+		break;
+	}
 	case 9: {
 		return false;
 	}
