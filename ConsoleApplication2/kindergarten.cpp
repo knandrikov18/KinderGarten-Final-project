@@ -94,6 +94,50 @@ void showUserMenu(USER_DATA* user, int& userCount, int& maxId)
 	}
 }
 
+int getUserByLastName(USER_DATA* users,int& userCount)
+{
+	string lastName;
+	cout << "Enter Last Name: ";
+	cin >> lastName;
+	for (int i = 0; i < userCount; i++)
+	{
+		if (users[i].lastName == lastName)
+		{
+			cout << "Customer's id: " << users[i].id << endl;;
+			cout << "Customer's Username: " << users[i].username<< endl;
+			cout << "Customer's Password: " << users[i].password<< endl;
+			cout << "Customer's First name: " << users[i].firstName<< endl;
+			cout << "Customer's Last Name: " << users[i].lastName<< endl;
+			cout << "Customer's Address: " << users[i].address<< endl;
+			cout << "Customer's Student Name: " << users[i].childName<< endl;
+			cout << "Customer's Year of student: " << users[i].yearOfChild<< endl;
+		}
+	}
+	return -1;
+}
+
+int getUserByChildName(USER_DATA* users, int& userCount)
+{
+	string childName;
+	cout << "Enter Last Name: ";
+	cin >> childName;
+	for (int i = 0; i < userCount; i++)
+	{
+		if (users[i].childName == childName)
+		{
+			cout << "Customer's id: " << users[i].id << endl;;
+			cout << "Customer's Username: " << users[i].username << endl;
+			cout << "Customer's Password: " << users[i].password << endl;
+			cout << "Customer's First name: " << users[i].firstName << endl;
+			cout << "Customer's Last Name: " << users[i].lastName << endl;
+			cout << "Customer's Address: " << users[i].address << endl;
+			cout << "Customer's Student Name: " << users[i].childName << endl;
+			cout << "Customer's Year of student: " << users[i].yearOfChild << endl;
+		}
+	}
+	return -1;
+}
+
 void inputUserData(USER_DATA* user, int& userCount, int& maxId) {
 	USER_DATA uSer;
 
