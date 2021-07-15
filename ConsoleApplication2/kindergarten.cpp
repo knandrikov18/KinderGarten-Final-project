@@ -3,16 +3,25 @@
 using namespace std;
 struct USER_DATA
 {
-	string userName;
+	string username;
 	string password;
-	int id = 1;
+	int id;
 	string firstName;
 	string lastName;
 	string address;
 	string childName;
 	int yearOfChild;
 };
-
+bool isAdmin(string UserName, string pass)
+{
+	string admin = "admin";
+	string adminPass = "adminpass";
+	if (UserName == admin and adminPass == pass)
+	{
+		cout << "Welcome, admin!\nAccess Granted!" << endl;
+		return true;
+	}
+}
 void createUser(USER_DATA* user, int& userCount, USER_DATA newOrder, int& maxId) {
 	newOrder.id = maxId;
 	user[userCount] = newOrder;
@@ -95,6 +104,7 @@ void inputUserData(USER_DATA* user, int& userCount, int& maxId) {
 	cout << endl;
 	cout << "Enter child age: ";
 	cin >> uSer.yearOfChild;
+	
 	createUser(user, userCount, uSer, maxId);
 }
 void editUser(USER_DATA* user, int& userCount) {
@@ -158,61 +168,6 @@ void deleteUserId(USER_DATA* user, int& userCount, int& maxId) {
 	cin >> userId;
 
 	deleteUser(user, userCount, userId);
-}
-void loginAdminSystem(string adminName, string adminPassword)
-{
-	int loginAttempt = 0;
-	while (loginAttempt < 2)
-	{
-		cout << "Please enter your admiName: ";
-		cin >> adminName;
-		cout << "Please enter your user password: ";
-		cin >> adminPassword;
-
-		if (adminName == "Admin" && adminPassword == "admin123")
-		{
-			cout << "Welcome Admin!\n";
-			break;
-		}
-		else
-		{
-			cout << "Invalid login attempt. Please try again.\n" << '\n';
-			loginAttempt++;
-		}
-	}
-	if (loginAttempt == 2) {
-		cout << "Too many login attempts! The program will now terminate.";
-	}
-	cout << endl;
-	cout << "Thank you for logging in.\n";
-
-}
-void loginUserSystem(string usName, string userPassword)
-{
-	int loginAttempt = 0;
-	while (loginAttempt < 2)
-	{
-		cout << "Please enter your user name: ";
-		cin >> usName;
-		cout << "Please enter your user password: ";
-		cin >> userPassword;
-
-		if (usName == "User" && userPassword == "user123")
-		{
-			cout << "Welcome User!\n";
-			break;
-		}
-		else
-		{
-			cout << "Invalid login attempt. Please try again.\n" << '\n';
-			loginAttempt++;
-		}
-	}
-	if (loginAttempt == 2) {
-		cout << "Too many login attempts! The program will now terminate.";
-	}
-	cout << "Thank you for logging in.\n";
-	cout << endl;
 }
 void adminMenu(USER_DATA* user, int& userCount, USER_DATA newOrder, int& maxId, int id)
 {
