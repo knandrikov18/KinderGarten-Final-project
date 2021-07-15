@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 using namespace std;
-bool option1Check = false;
 struct USER_DATA
 {
 	string userName;
@@ -342,8 +341,8 @@ int main()
 	cout << "WELCOME TO OUR PROGRAM!" << endl;
 	cout << "To try it, you'll have to enter whole number!" << endl << endl;
 	int userCount = 0;
-	int maxId = 0;
-	USER_DATA user[500];
+	int maxId = 1;
+	USER_DATA user[10];
 	USER_DATA newOrder;
 	int id = 0;
 	bool mainMenu;
