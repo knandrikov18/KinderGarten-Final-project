@@ -109,8 +109,8 @@ int getUserByLastName(USER_DATA* users,int& userCount)
 			cout << "Customer's First name: " << users[i].firstName<< endl;
 			cout << "Customer's Last Name: " << users[i].lastName<< endl;
 			cout << "Customer's Address: " << users[i].address<< endl;
-			cout << "Customer's Student Name: " << users[i].childName<< endl;
-			cout << "Customer's Year of student: " << users[i].yearOfChild<< endl;
+			cout << "Customer's Child Name: " << users[i].childName<< endl;
+			cout << "Customer's Year of child: " << users[i].yearOfChild<< endl;
 		}
 	}
 	return -1;
@@ -131,8 +131,8 @@ int getUserByChildName(USER_DATA* users, int& userCount)
 			cout << "Customer's First name: " << users[i].firstName << endl;
 			cout << "Customer's Last Name: " << users[i].lastName << endl;
 			cout << "Customer's Address: " << users[i].address << endl;
-			cout << "Customer's Student Name: " << users[i].childName << endl;
-			cout << "Customer's Year of student: " << users[i].yearOfChild << endl;
+			cout << "Customer's Child Name: " << users[i].childName << endl;
+			cout << "Customer's Year of child: " << users[i].yearOfChild << endl;
 		}
 	}
 	return -1;
@@ -163,7 +163,7 @@ void userMenu(USER_DATA* user, int& userCount, int& maxId) {
 	cout << endl;
 	cout << "Enter child age: ";
 	cin >> uSer.yearOfChild;
-	cout << "Year of Student: ";
+	cout << "Year of Child: ";
 	while (!(cin >> uSer.yearOfChild) or uSer.yearOfChild < 6)
 	{
 		cin.clear();
@@ -241,7 +241,7 @@ void deleteUserId(USER_DATA* user, int& userCount, int& maxId) {
 	deleteUser(user, userCount, userId);
 }
 
-bool showMainMenu(USER_DATA* user, int& userCount, int& maxId, USER_DATA newOrder, int id)
+bool showMainMenu(USER_DATA* user, int& userCount, int& maxId)
 {
 
 	int choice;
@@ -255,7 +255,7 @@ bool showMainMenu(USER_DATA* user, int& userCount, int& maxId, USER_DATA newOrde
 	cout << "3. Edit User Order" << endl;
 	cout << "4. Delete User Order" << endl;
 	cout << "5. Get User By Parent Last Name" << endl;
-	cout << "6. Get User By Student Name" << endl;
+	cout << "6. Get User By Child Name" << endl;
 	cout << "9. Exit" << endl;
 	cout << "Your choice: ";
 
@@ -301,11 +301,29 @@ int main()
 	int userCount = 0;
 	int maxId = 1;
 	USER_DATA user[10];
-	USER_DATA newOrder;
-	int id = 0;
-	bool mainMenu;
 
-	do {
-		mainMenu = showMainMenu(user, userCount, maxId, newOrder, id);
-	} while (mainMenu);
+	bool mainMenu = true;
+	string admin;
+	string adminpass;
+	cout << "Insert Username: ";
+	while (!(cin >> admin) or admin != "admin")
+	{
+		cin.clear();
+		cin.ignore(INT_MAX, '\n');
+		cout << "\nEnter correct adminusername: ";
+	}
+	cout << "Insert Password: ";
+	while (!(cin >> adminpass) or adminpass != "adminpass")
+	{
+		cin.clear();
+		cin.ignore(INT_MAX, '\n');
+		cout << "\nEnter correct adminpass: ";
+	}
+	bool isAdmina = isAdmin(admin, adminpass);
+	if (isAdmina == true)
+	{
+		do {
+			mainMenu = showMainMenu(user, userCount, maxId);
+		} while (mainMenu);
+	}
 }
