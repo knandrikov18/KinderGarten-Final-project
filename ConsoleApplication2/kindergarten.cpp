@@ -22,7 +22,7 @@ bool isAdmin(string UserName, string pass)
 		return true;
 	}
 }
-void createUser(USER_DATA* user, int& userCount, USER_DATA newOrder, int& maxId) {
+void createUser(USER_DATA* user, int userCount, USER_DATA newOrder, int maxId) {
 	newOrder.id = maxId;
 	user[userCount] = newOrder;
 }
@@ -58,11 +58,7 @@ void deleteUser(USER_DATA* user, int& userCount, int id) {
 USER_DATA getOrder(USER_DATA* user, int& userCount, int id)
 {
 	int index = getUserById(user, userCount, id);
-	if (index != id)
-	{
-		cout << "Enter valid ID";
-		cin >> index;
-	}
+
 	return user[index];
 }
 bool checkIsIdValid(USER_DATA* user, int& userCount, int Id)
@@ -119,7 +115,7 @@ int getUserByLastName(USER_DATA* users,int& userCount)
 int getUserByChildName(USER_DATA* users, int& userCount)
 {
 	string childName;
-	cout << "Enter Last Name: ";
+	cout << "Enter Child Name: ";
 	cin >> childName;
 	for (int i = 0; i < userCount; i++)
 	{
@@ -162,9 +158,7 @@ void userMenu(USER_DATA* user, int& userCount, int& maxId) {
 	cin >> uSer.childName;
 	cout << endl;
 	cout << "Enter child age: ";
-	cin >> uSer.yearOfChild;
-	cout << "Year of Child: ";
-	while (!(cin >> uSer.yearOfChild) or uSer.yearOfChild < 6)
+	while (!(cin >> uSer.yearOfChild) or uSer.yearOfChild > 5)
 	{
 		cin.clear();
 		cin.ignore(INT_MAX, '\n');
