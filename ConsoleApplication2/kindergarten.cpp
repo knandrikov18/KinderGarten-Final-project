@@ -138,12 +138,17 @@ int getUserByChildName(USER_DATA* users, int& userCount)
 	return -1;
 }
 
-void inputUserData(USER_DATA* user, int& userCount, int& maxId) {
+
+
+void userMenu(USER_DATA* user, int& userCount, int& maxId) {
 	USER_DATA uSer;
 
-	cout << "Enter id: ";
-	cin >> uSer.id;
-	cout << endl;
+	cout << "Username: ";
+	cin >> uSer.username;
+
+	cout << "Password: ";
+	cin >> uSer.password;
+
 	cout << "Enter first name: ";
 	cin >> uSer.firstName;
 	cout << endl;
@@ -158,14 +163,26 @@ void inputUserData(USER_DATA* user, int& userCount, int& maxId) {
 	cout << endl;
 	cout << "Enter child age: ";
 	cin >> uSer.yearOfChild;
-	
+	cout << "Year of Student: ";
+	while (!(cin >> uSer.yearOfChild) or uSer.yearOfChild < 6)
+	{
+		cin.clear();
+		cin.ignore(INT_MAX, '\n');
+		cout << "\nEnter correct Year: ";
+	}
 	createUser(user, userCount, uSer, maxId);
+	userCount++;
+	maxId++;
 }
 void editUser(USER_DATA* user, int& userCount) {
 	int userId;
 	cout << "\nEnter user ID: ";
 	cin >> userId;
-
+	bool a = checkIsIdValid(user, userCount, userId);
+	if (a == false)
+	{
+		cin >> userId;
+	}
 	USER_DATA users = getOrder(user, userCount, userId);
 
 	cout << "\n1. First name: " << endl;
@@ -241,7 +258,7 @@ void adminMenu(USER_DATA* user, int& userCount, USER_DATA newOrder, int& maxId, 
 	{
 	case 1:
 		system("CLS");
-		inputUserData(user, userCount, maxId);
+		userMenu(user, userCount, maxId);
 		adminMenu(user, userCount, newOrder, maxId, id);
 		break;
 	case 2:
@@ -251,7 +268,7 @@ void adminMenu(USER_DATA* user, int& userCount, USER_DATA newOrder, int& maxId, 
 		break;
 	case 3:
 		system("CLS");
-		showUser(user, userCount, maxId);
+		showUserMenu(user, userCount, maxId);
 		adminMenu(user, userCount, newOrder, maxId, id);
 		break;
 	case 4:
